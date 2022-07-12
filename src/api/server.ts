@@ -1,26 +1,10 @@
-let token = '3db0dffd203e84462178c56b427c89c2d7b2bb08ae2e6824'
-// Retrieve token of logged in user
-// let token = async () =>{
-//     const response = await fetch(`/signin`,{
-//         method: 'GET',
-//         headers:{
-//             'Content-Type': 'application/json',
-//         }
-//     })
-//     console.log(response)
-//}
+import {getToken} from '../api/token'
 
-export const serverCalls = {
-    // token: async () =>{
-    //     const response = await fetch(`/signin`,{
-    //         method: 'GET',
-    //         headers:{
-    //             'Content-Type': 'application/json',
-    //         }
-    //     })
-    //     console.log(response)
-    //},
+let token = getToken.get()
+console.log(token)
 
+export const serverCalls ={
+    
     get: async () => {
         const response = await fetch(`/api/budget`,{
             method: 'GET',

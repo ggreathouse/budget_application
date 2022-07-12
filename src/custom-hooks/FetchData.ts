@@ -15,3 +15,22 @@ export const useGetData = () =>{
 
     return {budgetData, getData:handleDataFetch}
 }
+
+export const useGetUser = () =>{
+    const [user, setUser] = useState<any | null>(null)
+
+    const getUsername = async () =>{
+        const response = await fetch(`/@me`,{
+            method: 'GET',
+            headers:{
+                'Content-Type': 'application/json',
+            }
+        })
+        setUser(response)
+    }
+    useEffect( ()=> {
+        getUsername();
+    }, [])
+
+    return {user, getUser:getUsername}
+}

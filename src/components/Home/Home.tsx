@@ -254,7 +254,7 @@ export const Home = ( props:Props ) => {
                               color: 'white', 
                               borderRadius: 20,
                               padding: '0.5em',}}
-                              variant='contained' href='#' >See the Code</Button>
+                              variant='contained' href='https://github.com/ggreathouse/budget_application.git' >See the Code</Button>
                 </GithubText>
                 <GithubImage />
             </Box>

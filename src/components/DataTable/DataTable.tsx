@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DataGrid, GridColDef, GridSelectionModel, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef, GridSelectionModel} from '@mui/x-data-grid';
 import { Button, Dialog,
     DialogActions,
     DialogContent,
@@ -128,6 +128,8 @@ export const DataTable= () => {
     let [gridData, setData] =useState<GridSelectionModel>([])
     let handleOpen = () => {
         setOpen(true)
+        
+        
     }
 
     let handleClose = () => {
@@ -138,7 +140,7 @@ export const DataTable= () => {
         await serverCalls.delete(`${gridData[0]}`)
         getData();
     }
-
+    
     console.log(gridData)
 
     return (
